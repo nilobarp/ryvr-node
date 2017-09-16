@@ -5,19 +5,43 @@
   "main": "index.js",
   "author": "Nilotpal <nilobarp@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "gulp",
+    "clean": "gulp clean",
+    "start": "node ./build/Ryvr.js",
+    "test": "jest --coverage --silent"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "mapCoverage": true,
+    "coverageReporters": ["json", "lcov", "text", "html"]
+  },
   "engines": {
     "node": ">=6.9.5 <8.0.0",
     "npm": ">=3.10.10 <4.0.0",
     "yarn": ">=1.0.2"
   },
   "devDependencies": {
+    "@types/chai": "^4.0.4",
     "@types/gulp": "^4.0.4",
     "@types/jest": "^20.0.8",
     "@types/node": "^8.0.28",
+    "chai": "^4.1.2",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-typescript": "^3.2.2",
     "jest": "^21.1.0",
+    "ts-jest": "^21.0.1",
     "tslint": "^5.7.0",
     "typescript": "^2.5.2",
     "vinyl-buffer": "^1.0.0",

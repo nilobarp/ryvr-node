@@ -1,4 +1,3 @@
-const browserify = require('browserify');
 const del = require('del');
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
